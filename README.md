@@ -6,7 +6,7 @@ All source code in this repository is licensed under the **GNU General Public Li
 - You may use, modify, and distribute the code
 - All derivative works must remain under GPL-3.0
 - Commercial use is permitted
-- Full license terms: [LICENSE-CODE](https://github.com/Isangerak/NEA-Coursework/edit/main/LICENSE-CODE.md)
+- Full license terms: [LICENSE-CODE](LICENSE-CODE.md)
 
 
 
