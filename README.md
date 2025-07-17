@@ -40,8 +40,7 @@ All source code in this repository is licensed under the **GNU General Public Li
 
 
 ## Overview
-> This project was submitted for AQA A-Level Computer Science (7517) in July 2025. Submitted documentation is not included here per academic integrity guidelines.
-
+> This project was submitted for A-Level coursework. Original NEA documentation and assessment materials are excluded.
 
 STOCKLE is a is a lightweight stock management system that provides the flexbility of connecting a stock management software, mine or any other (with adequate adjustments) to integrate with a third party till software (Aronium is what this project will use to simulate this). Flask is used as the acting API to bridge these two pieces of software. Despite it's channel being HTTP I have implemented my versions of RSA-2048 and AES-256 to securely transfer data.
 
@@ -299,6 +298,5 @@ user to not require anyone with programming experience to setup the workflow.
 
 
 ## Video Tech Demonstration
-Please note that my GPU was on the verge of collapsing so when recording Aronium operations the frames are not the best.
 
 **Youtube Link:** https://www.youtube.com/playlist?list=PLLMWs2xI3yswBjIdl-puGXo8d_sgizNJ5
