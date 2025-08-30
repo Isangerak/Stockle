@@ -14,7 +14,7 @@ visualisation_frame_color = "#EEEEEE"
 
 class TkinterApp(tk.Tk):
 
-    def __init__(self,user_controller,stock_controller,app_controller):
+    def __init__(self,user_controller,stock_controller,app_controller,stockle_img_path,sync_img_path):
         tk.Tk.__init__(self)
         self.app_controller = app_controller
         self.user_controller = user_controller
@@ -30,8 +30,8 @@ class TkinterApp(tk.Tk):
         self.geometry("1100x700")
         self.title('Stock Management System')
         self.config(background=selectionbar_color)
-        icon = tk.PhotoImage(file='Stockle.png')
-        self.iconphoto(True, icon)
+        self.icon = tk.PhotoImage(file=stockle_img_path)
+        self.iconphoto(True, self.icon)
 
         # ---------------- HEADER ------------------------
         self.__header = tk.Frame(self, bg=header_color)
@@ -43,7 +43,7 @@ class TkinterApp(tk.Tk):
 
 
         # Sync Button
-        self.__sync_image = tk.PhotoImage(file="sync.png")
+        self.__sync_image = tk.PhotoImage(file=sync_img_path)
         sync_button= ttk.Button(self.__header, image=self.__sync_image,command= self.__send_sync_request)
         sync_button.place(relx=0.85,rely=0.2,relwidth=0.06,relheight=0.6)
 
@@ -68,7 +68,7 @@ class TkinterApp(tk.Tk):
             #Logo
         self.__brand_frame = tk.Frame(self.__sidebar, bg=sidebar_color)
         self.__brand_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
-        self.__stock_logo = icon.subsample(9)
+        self.__stock_logo = self.icon.subsample(9)
         logo = tk.Label(self.__brand_frame, image=self.__stock_logo, bg=sidebar_color)
         logo.place(x=5, y=20)
             # SUBMENUS IN SIDE BAR

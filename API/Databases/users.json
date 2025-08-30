@@ -1,0 +1,8 @@
+[
+    {
+        "username": "admin",
+        "password_hash": "d033e22ae348aeb5660fc2140aec35850c4da997",
+        "description": "ROOT USER",
+        "permissions": "RWX"
+    }
+]

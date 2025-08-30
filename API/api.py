@@ -17,15 +17,26 @@ ip_table = {}
 
 
 
-DATABASE_PATH = 'Databases/stock_management.db'
 
+# directory where current file is
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_DIR = os.path.join(BASE_DIR, "Databases")
+
+# Paths to Database children
+DB_PATH = os.path.join(DB_DIR,"stock_management.db")
+USER_PATH = os.path.join(DB_DIR,"users.json")
+
+# Create Database folder if doesn't exist
+os.makedirs(DB_DIR, exist_ok=True)
+  
 # Create the Initial Database records
-if not os.path.exists("API/" + DATABASE_PATH):
+
+if not os.path.exists(DB_PATH):
     print("No Databases Found!")
     print("Creating Initial Databases Now ...")
-    create_database()
+    create_database(DB_PATH)
 
-if not os.path.exists("API/Databases/users.json"):
+if not os.path.exists(USER_PATH):
     print(""""
 ------------------------------------------------------
 WELCOME TO STOCKLE BY KARAM SANGERA 
@@ -37,11 +48,11 @@ Default password: admin
 ------------------------------------------------------
 PLEASE CHANGE THESE CREDENTIALS AS SOON AS POSSIBLE
 ------------------------------------------------------""")
-    create_account()
+    create_account(USER_PATH)
 
 # Set up Models
-user_model = UserModel()
-stock_model = StockModel()
+user_model = UserModel(USER_PATH)
+stock_model = StockModel(DB_PATH)
 
 app = Flask(__name__)
 # Set the flag for real time sync request

@@ -4,7 +4,7 @@ from datetime import datetime
 
 class DatabaseManager():
     # Handle all database operations
-    def __init__(self,db_path="API/Databases/stock_management.db"):
+    def __init__(self,db_path):
         self.__db_path = db_path
     
 

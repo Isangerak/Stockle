@@ -4,9 +4,8 @@ import json
 
 
 
-
-def create_db():
-    conn = sqlite3.connect('API/Databases/stock_management.db')
+def create_db(path):
+    conn = sqlite3.connect(path)
     cursor = conn.cursor()
 
     # SQL statements to create the tables
@@ -74,8 +73,8 @@ def create_db():
 
 
 
-def create_stock_trigger():
-    conn = sqlite3.connect('API/Databases/stock_management.db')
+def create_stock_trigger(path):
+    conn = sqlite3.connect(path)
     cursor = conn.cursor()
     
     trigger_sql = """
@@ -179,7 +178,7 @@ def create_stock_trigger():
 
 
     
-def initial_account():
+def initial_account(path):
     # Admin User Format
     sha = SHA1()
     password_hash = sha.hash("admin",True)
@@ -192,19 +191,18 @@ def initial_account():
         }
     ]
 
-    file_path = "API/Databases/users.json"
 
     # Write user data to JSON file
-    with open(file_path, "w") as file:
+    with open(path, "w") as file:
         json.dump(users_data, file, indent=4)
 
     print("Admin Account Created!")
 
 
-def create_database():
-    create_db()
-    create_stock_trigger()
+def create_database(path):
+    create_db(path)
+    create_stock_trigger(path)
 
 
-def create_account():
-    initial_account()
+def create_account(path):
+    initial_account(path)

@@ -5,10 +5,12 @@ from api_controller import APIController
 from views.main_view import TkinterApp
 from app_controller import AppController
 from tkinter import messagebox
+import os
 
 # API SOCKET SHOULD BE STATIC IPV4 ADDRESS
 api_socket = "http://192.168.0.17:5000"
-
+STOCKLE_IMG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"Stockle.png")
+SYNC_IMG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"sync.png")
 
 def main():
     # Set Controllers
@@ -32,7 +34,7 @@ def main():
     
         while app_controller.get_current_user() is not None:
             # Start app
-            app = TkinterApp(user_controller,stock_controller,app_controller)
+            app = TkinterApp(user_controller,stock_controller,app_controller,STOCKLE_IMG_PATH,SYNC_IMG_PATH)
             # Set main_view for app_controller
             app_controller.main_view = app
             app.protocol("WM_DELETE_WINDOW",app.on_closing)

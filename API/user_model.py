@@ -3,7 +3,7 @@ from HashAlgorithm import SHA1
 
 
 class UserModel():
-    def __init__(self,file_path="API/Databases/users.json"):
+    def __init__(self,file_path):
         self.__file_path = file_path
         # Load all users into variable
         self.__user_data = self.load_users()
