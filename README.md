@@ -209,15 +209,14 @@ This should be run on the device that is going to be acting as the server hostin
 >**Note that you can have the API and inventory software running on the same machine, however make sure to reference the API address with it's actual IP Address not the loopback address, ie 192.168.0.5**
 
 
-**DO NOT RUN FILE FROM WITHIN THE FOLDER HOLDING THE FILE**.
+
 
 #### How to run the program?
 The main program is _api.py_
 
 
 
-Example: python3 API/api.py ✓ | python3 api.py ✗
-> This is due to the database being referenced from your current working directory. So it should be the directory holding the **folder**
+Example: python3 API/api.py ✓ | python3 api.py ✓
 
 
 #### What this folder contains?
@@ -225,7 +224,7 @@ o Contains the API script, models, local database and user JSON
 
 o Holds the endpoints
 ### Inventory Software
-Unlike the API this should be run from **within the folder** as it will be referencing both _stockle.png_ and _sync_png_ from your current working directory.
+
 
 **IMPORTANT:** within _inventory_software.py_ you will need to reference the IP Address of the API. A Placeholder will already be there to show you an example of a valid entry.
 
@@ -236,7 +235,7 @@ The main program is _inventory_software.py_
 
 
 
-Example: python3 inventory_software.py ✓ | python3 Inventory\ Software/inventory_software.py ✗
+Examples: python3 inventory_software.py ✓ | python3 Inventory\ Software/inventory_software.py ✓
 
 
 #### What this folder contains?
@@ -263,7 +262,7 @@ o Needs to reference API IPv4 address
 
 **DO NOT RUN FILE FROM WITHIN THE FOLDER HOLDING THE FILE**.
 
-Instead run from directory holding folder, just like the API program
+Instead run from directory holding folder
 
 #### How to run the program?
 The main program is _Backend.py_
